@@ -23,7 +23,7 @@
 	<li>add text and rule in a json request body</li>
 	</ul>
  <h3>Dialog flow </h3>
-	<p>Has been exported so you can add it to your own project or see screenshots and add manually. In folder /Dialogflow </p>
+	<p>Has been exported so you can add it to your own project. In folder /Dialogflow </p>
 
 <h2>Run it</h2>
 <ul>
