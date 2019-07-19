@@ -5,10 +5,39 @@
 
 <h2>Why use Dialog Flow</h2>
 <ul>
+  <li> Handles variances of words and checks for mistakes from the user</li>
   <li>For non programmers this is the best solution anyone can simply add new rules and go to https://regex101.com/ test and add regex as the response</li>
   <li>Can have variances of the text passed through without having to change any code Dialog flow can handle this</li>
   <li>Easily Users can add new rules and regex without having to change the backend code or deploy new code</li>
   <li>Can be tested from the Dialog flow instance or from a Rest Call</li>
+</ul>
+
+<h2>Use Cases<h2>
+<p>the phone number is 973-222-5555 in my contacts</p>
+<ul>
+    <li>Nth word->Grabs the nth word</li>
+        <ul>
+            <li>Example: Second Word, Returns: "phone"</li>
+            <li>Example: Third Word, Returns: "number"</li>
+            <li>Variances handled such as: ["word 5", "word five", "word number 5"]</li>
+        </ul>
+    </li>
+    <p>the phone number is 973-222-5555 in my contacts</p>
+    <li>Second through 4th word->Grabs from the second word to the forth</li>
+        <ul>
+        <li>Example: Second through 4th word, Returns: "phone number is 973-222-5555"</li>
+        <li>Example: 1st through 3rd, Returns: "the phone number"</li>
+        <li>Variances handled such as: ["1 to 3", "1st through 3rd", "2nd through 4th", "second through fourth"]]</li>
+        </ul>
+    </li>
+    <p>email me at palumboe1@gmail.com when you have the chance thank you</p>
+        <li>Following nth words->Grabs the following nth words after email address</li>
+        <ul>
+        <li>Example: email following 3 words, Returns: "when you have"</li>
+        <li>Variances handled such as: ["email following 3 words", "email 3 words after"]</li>
+        </ul>
+        </li>
+
 </ul>
 
 	
