@@ -20,6 +20,7 @@ class Rule{
                     let intent=response.intent.displayName.toLowerCase()
                     console.log("intent: "+intent)
                     if(intent ==null){return res.send({"ERROR":"NO INTENT FOUND"});}
+                    let what=""
                     switch(intent) {
                         case "splice":
                             //single or multiple words first two cases
@@ -30,8 +31,12 @@ class Rule{
                         break;
                         case "splice-based-on-email":
                             let following=response.fulfillmentMessages[0].payload.fields.following.stringValue
-                            let what=response.fulfillmentMessages[0].payload.fields.what.stringValue
+                            what=response.fulfillmentMessages[0].payload.fields.what.stringValue
                             return parsingFunctions.wordAndFollowing(text,what,following,res)
+                        break;
+                        case "preceding-text":
+                            what=response.fulfillmentMessages[0].payload.fields.what.stringValue
+                            return parsingFunctions.wordsPreceding(text,what,res)
                         break;
                         default:
                                 return res.send({"ERROR":"NO INTENT MATCHED FOR A FUNCTION"});

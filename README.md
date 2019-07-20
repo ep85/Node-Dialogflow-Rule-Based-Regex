@@ -40,6 +40,14 @@
         <li>Variances handled such as: ["email following 3 words", "email 3 words after"]</li>
         </ul>
         </li>
+    <p>this is my phone number 973-222-5555 </p>
+        <li>string preceding "phone" :Grabs the following words prior to phone</li>
+        <ul>
+        <li>Example: string preceding phone, Returns: "this is my"</li>
+        <li>Example: string preceding <strong>phone number</strong>, Returns: "this is my phone number "</li>
+        <li>Variances handled such as: ["string preceding email address", "string preceding email", "string preceding dollars"]</li>
+        </ul>
+        </li>
 
 </ul>
 
