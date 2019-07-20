@@ -33,7 +33,10 @@
     <p>email me at palumboe1@gmail.com when you have the chance thank you</p>
         <li>Following nth words->Grabs the following nth words after email address</li>
         <ul>
-        <li>Example: email following 3 words, Returns: "when you have"</li>
+        <li>Example: email following 3 words, Returns: Grabs following 3 words after the word email is found</li>
+        <li>Example: email address following 3 words, Returns: Grabs following 3 words after an email address is found</li>
+        <li>Example: <strong>phone number</strong> following 3 words after a phone number is found</li>
+        <li>Example: phone following 3 words, Returns: 3 words after a the word phone is found</li>
         <li>Variances handled such as: ["email following 3 words", "email 3 words after"]</li>
         </ul>
         </li>
