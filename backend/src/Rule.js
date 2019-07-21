@@ -38,6 +38,9 @@ class Rule{
                             what=response.fulfillmentMessages[0].payload.fields.what.stringValue
                             return parsingFunctions.wordsPreceding(text,what,res)
                         break;
+                        case "preceding-date":
+                            what=response.fulfillmentMessages[0].payload.fields.what.stringValue
+                            return parsingFunctions.specificPreceding(text,what,res)
                         default:
                                 return res.send({"ERROR":"NO INTENT MATCHED FOR A FUNCTION"});
                                 

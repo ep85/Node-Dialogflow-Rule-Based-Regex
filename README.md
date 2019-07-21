@@ -12,6 +12,8 @@
   <li>Can be tested from the Dialog flow instance or from a Rest Call</li>
 </ul>
 
+<strong>When searching for a specific string say date preceding "Phone" it will be case sensitive</strong>
+
 <h2>Use Cases<h2>
 <p>the phone number is 973-222-5555 in my contacts</p>
 <ul>
@@ -46,6 +48,13 @@
         <li>Example: string preceding phone, Returns: "this is my"</li>
         <li>Example: string preceding <strong>phone number</strong>, Returns: "this is my phone number "</li>
         <li>Variances handled such as: ["string preceding email address", "string preceding email", "string preceding dollars"]</li>
+        </ul>
+        </li>
+    <p>06/22/2013 is when I was born I bought a phone at 12 </p>
+    <li>grabs the date preceding the string "Phone" :returns the date preceding "Phone" 06/22/2013</li>
+        <ul>
+        <li>Example: Date preceding phone, Returns: "06/22/2013"</li>
+        <li>Variances handled such as: ["Date preceding phone", "Date preceding phone number", "Date preceding email", "Date preceding email address", "Date preceding <string>"]</li>
         </ul>
         </li>
 

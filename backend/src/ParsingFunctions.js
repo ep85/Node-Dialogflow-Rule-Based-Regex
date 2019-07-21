@@ -55,7 +55,7 @@ class ParsinFunctions{
             splitArray=text.split(what)
             returnTxt=this.wordAndFollowingParsing(splitArray, followingNum)
         }
-        return this.returnBack(res,returnTxt.trim(),text,what);
+        return this.returnBack(res,returnTxt,text,what);
     }
     /*
     --------------------------------------------------------------------------
@@ -85,7 +85,48 @@ class ParsinFunctions{
             splitArray=text.split(what)
             returnTxt=this.wordsPrecedingParsing(splitArray)
         }
-        return this.returnBack(res,returnTxt.trim(),text,what);
+        return this.returnBack(res,returnTxt,text,what);
+    }
+
+    /*
+    --------------------------------------------------------------------------
+                    Specific Word Parsing
+    --------------------------------------------------------------------------
+    */
+   specificPrecedingParsing(text){
+        console.log("HERE")
+        console.log(text)
+        if(text.length>1 ){
+            let textFormat=text[0].trim()
+            //will only work for MM-DD-YYYY
+            textFormat= textFormat.match(/((?=\d{4})\d{4}|(?=[a-zA-Z]{3})[a-zA-Z]{3}|\d{2})((?=\/)\/|\-)((?=[0-9]{2})[0-9]{2}|(?=[0-9]{1,2})[0-9]{1,2}|[a-zA-Z]{3})((?=\/)\/|\-)((?=[0-9]{4})[0-9]{4}|(?=[0-9]{2})[0-9]{2}|[a-zA-Z]{3})/g)
+            if(textFormat.length>0){
+                return textFormat[0].trim()
+            }else{
+                return ""
+            }
+        }
+        return "";
+    }
+
+    specificPreceding(text,what,res){
+        let returnTxt
+        let splitArray=[]
+        if(what=="email address"){
+            //email address
+            splitArray=text.split(/@\w*.\w*/)
+            returnTxt=this.specificPrecedingParsing(splitArray)
+        }else if(what=="phone number"){
+            //phone number
+            splitArray=text.split(/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/)
+            returnTxt=this.specificPrecedingParsing(splitArray)
+        }else{
+            //any word passed thorugh
+            splitArray=text.split(what)
+            console.log(what)
+            returnTxt=this.specificPrecedingParsing(splitArray)
+        }
+        return this.returnBack(res,returnTxt,text,what);
     }
 }
 module.exports = ParsinFunctions;
