@@ -14,7 +14,7 @@
 
 <strong>When searching for a specific string say date preceding "Phone" it will be case sensitive</strong>
 
-<h2>Use Cases<h2>
+<h2>Use Cases</h2>
 <p>the phone number is 973-222-5555 in my contacts</p>
 <ul>
     <li>Nth word->Grabs the nth word</li>
