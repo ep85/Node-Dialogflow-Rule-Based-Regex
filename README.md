@@ -24,6 +24,7 @@
             <li>Variances handled such as: ["word 5", "word five", "word number 5"]</li>
         </ul>
     </li>
+  </ul>
     <h3>the phone number is 973-222-5555 in my contacts</h3>
     <li>Second through 4th word->Grabs from the second word to the forth</li>
         <ul>
