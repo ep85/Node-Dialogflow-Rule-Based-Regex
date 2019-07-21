@@ -15,7 +15,7 @@
 <strong>When searching for a specific string say date preceding "Phone" it will be case sensitive</strong>
 
 <h2>Use Cases</h2>
-<p>the phone number is 973-222-5555 in my contacts</p>
+<h3>the phone number is 973-222-5555 in my contacts</h3>
 <ul>
     <li>Nth word->Grabs the nth word</li>
         <ul>
@@ -24,7 +24,7 @@
             <li>Variances handled such as: ["word 5", "word five", "word number 5"]</li>
         </ul>
     </li>
-    <p>the phone number is 973-222-5555 in my contacts</p>
+    <h3>the phone number is 973-222-5555 in my contacts</h3>
     <li>Second through 4th word->Grabs from the second word to the forth</li>
         <ul>
         <li>Example: Second through 4th word, Returns: "phone number is 973-222-5555"</li>
