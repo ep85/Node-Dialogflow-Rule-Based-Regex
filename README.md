@@ -15,7 +15,7 @@
 <strong>When searching for a specific string say date preceding "Phone" it will be case sensitive</strong>
 
 <h2>Use Cases</h2>
-<h3>the phone number is 973-222-5555 in my contacts</h3>
+<h3>The phone number is 973-222-5555 in my contacts</h3>
 <ul>
     <li>Nth word->Grabs the nth word</li>
         <ul>
@@ -25,7 +25,8 @@
         </ul>
     </li>
   </ul>
-    <h3>the phone number is 973-222-5555 in my contacts</h3>
+<h3>The phone number is 973-222-5555 in my contacts</h3>
+     <ul>
     <li>Second through 4th word->Grabs from the second word to the forth</li>
         <ul>
         <li>Example: Second through 4th word, Returns: "phone number is 973-222-5555"</li>
@@ -33,7 +34,9 @@
         <li>Variances handled such as: ["1 to 3", "1st through 3rd", "2nd through 4th", "second through fourth"]]</li>
         </ul>
     </li>
-    <p>email me at palumboe1@gmail.com when you have the chance thank you</p>
+     </ul>
+<h3>email me at palumboe1@gmail.com when you have the chance thank you</h3>
+ <ul>
         <li>Following nth words->Grabs the following nth words after email address</li>
         <ul>
         <li>Example: email following 3 words, Returns: Grabs following 3 words after the word email is found</li>
@@ -43,7 +46,9 @@
         <li>Variances handled such as: ["email following 3 words", "email 3 words after"]</li>
         </ul>
         </li>
-    <p>this is my phone number 973-222-5555 </p>
+    </ul>
+    <h3>this is my phone number 973-222-5555 </h3>
+     <ul>
         <li>string preceding "phone" :Grabs the following words prior to phone</li>
         <ul>
         <li>Example: string preceding phone, Returns: "this is my"</li>
@@ -51,15 +56,16 @@
         <li>Variances handled such as: ["string preceding email address", "string preceding email", "string preceding dollars"]</li>
         </ul>
         </li>
-    <p>06/22/2013 is when I was born I bought a phone at 12 </p>
-    <li>grabs the date preceding the string "Phone" :returns the date preceding "Phone" 06/22/2013</li>
-        <ul>
-        <li>Example: Date preceding phone, Returns: "06/22/2013"</li>
-        <li>Variances handled such as: ["Date preceding phone", "Date preceding phone number", "Date preceding email", "Date preceding email address", "Date preceding <string>"]</li>
-        </ul>
-        </li>
-
-</ul>
+     </ul>
+    <h3>06/22/2013 is when I was born I bought a phone at 12 </h3>
+    <ul>
+        <li>grabs the date preceding the string "Phone" :returns the date preceding "Phone" 06/22/2013</li>
+            <ul>
+            <li>Example: Date preceding phone, Returns: "06/22/2013"</li>
+            <li>Variances handled such as: ["Date preceding phone", "Date preceding phone number", "Date preceding email", "Date preceding email address", "Date preceding <string>"]</li>
+            </ul>
+            </li>
+    </ul>
 
 	
 <h2>Setup</h2>
