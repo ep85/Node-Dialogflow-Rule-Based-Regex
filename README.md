@@ -3,6 +3,9 @@
 
 <h2>Summary</h2> <p>This service will take in a text and rule and will use Dialog Flow to determine which rule to use. DialogFlow will pass back an intent of which rule it is and will pass back regex that the user setting up dialog flow has set as a response. Then the API will return the text with the regex applied.</p>
 
+<h2>How to add new Queries</h2>
+<p>Since Dialog flow is being used code will not have to be touched to add new queries. Say tomorrow instead of searching for string preceding phone you want to search for string preceding the name "Michael", Dialog flow may auto pick this up and it will work without doing anything or you can go into dialog flow and add that query within minutes <strong>no coding or deployments.</strong></p>
+
 <h2>Why use Dialog Flow</h2>
 <ul>
   <li> Handles variances of words and checks for mistakes from the user</li>
@@ -88,3 +91,9 @@
        <li> Send the post man request </li>
 </ul>
 
+<h2>Easy improvements</h2>
+<ul>
+    <li> Add more cases in Dialog flow</li>
+    <li> Multiple queries in one request </li>
+    <li> Instead of using the split technique, I could utilize match better </li>
+</ul>
