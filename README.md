@@ -35,7 +35,7 @@
         </ul>
     </li>
      </ul>
-<h3>email me at palumboe1@gmail.com when you have the chance thank you</h3>
+<h3>Email me at palumboe1@gmail.com when you have the chance thank you</h3>
  <ul>
         <li>Following nth words->Grabs the following nth words after email address</li>
         <ul>
@@ -47,7 +47,7 @@
         </ul>
         </li>
     </ul>
-    <h3>this is my phone number 973-222-5555 </h3>
+    <h3>This is my phone number 973-222-5555 </h3>
      <ul>
         <li>string preceding "phone" :Grabs the following words prior to phone</li>
         <ul>
