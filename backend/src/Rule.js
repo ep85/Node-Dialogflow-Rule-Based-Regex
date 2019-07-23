@@ -1,7 +1,6 @@
 const DialogFlow=require("./DialogFlowService.js");
 const ParsingFunctions=require("./ParsingFunctions.js");
 
-
 class Rule{
     start(req,res){
             //rule to query Dialog Flow with
@@ -28,17 +27,16 @@ class Rule{
                             let lower=response.fulfillmentMessages[0].payload.fields.lower.stringValue
                             let upper=response.fulfillmentMessages[0].payload.fields.upper.stringValue
                             return parsingFunctions.splice(text,upper,lower,res)
-                        break;
                         case "splice-based-on-email":
                             let following=response.fulfillmentMessages[0].payload.fields.following.stringValue
                             what=response.fulfillmentMessages[0].payload.fields.what.stringValue
                             return parsingFunctions.wordAndFollowing(text,what,following,res)
-                        break;
                         case "preceding-text":
+                            //string before email/phone/any word
                             what=response.fulfillmentMessages[0].payload.fields.what.stringValue
                             return parsingFunctions.wordsPreceding(text,what,res)
-                        break;
                         case "preceding-date":
+                            //date or other email/phone/any word
                             what=response.fulfillmentMessages[0].payload.fields.what.stringValue
                             return parsingFunctions.specificPreceding(text,what,res)
                         default:

@@ -1,7 +1,9 @@
 
 
 class ParsinFunctions{
-    //works for case of multiple or single
+    /**
+     * Standard format for returning back to the API
+     */
     returnBack(res,returnTxt,text,what,upper,lower){
         if(returnTxt !=null && returnTxt !=""){
             return res.send({"forcast":returnTxt});
@@ -18,6 +20,14 @@ class ParsinFunctions{
                     Word Splicing
     --------------------------------------------------------------------------
     */
+    /**
+     * Use Case
+     * 1. GET Specific index of word -> "Second word"
+     * 2. Get words between two indexs -> "Second through fifth word"
+    * Description
+    * Finds the word to splice then gets the specific amount of words after that 
+    * the query asks for, can work for 
+    */
     splice(text,upper,lower, res){
         console.log("Spliceing with lower: "+lowerbound+ " and "+"upper "+upperbound)
         let upperbound=parseInt(upper)
@@ -31,6 +41,7 @@ class ParsinFunctions{
                     Following Parsing
     --------------------------------------------------------------------------
     */
+   //Parses the array to get Specific amount of words after what it was looking for
     wordAndFollowingParsing(text,following){
         if(text.length>1 ){
             let textFormat=text[0].trim().split(" ").slice(0,following).join(' ')
@@ -38,6 +49,14 @@ class ParsinFunctions{
         }
         return "";
     }
+     /**
+     * Use Case
+     * 1. Email/Phone or word following a specific amount of words
+    * Description
+    * Locates the specific word then grabs the amount of words after specificed
+    * Technical:
+    * Splits based regex of what it is then passes it to parser  
+    */
     wordAndFollowing(text,what,following,res){
         let returnTxt
         let followingNum=parseInt(following)
@@ -62,6 +81,7 @@ class ParsinFunctions{
                     Preceding Parsing
     --------------------------------------------------------------------------
     */
+   //Returns the string prior to specific word
    wordsPrecedingParsing(text){
         if(text.length>1 ){
             let textFormat=text[0].trim()
@@ -69,6 +89,14 @@ class ParsinFunctions{
         }
         return "";
     }
+    /**
+    * Use Case
+    * 1. String Preceding
+    * Description
+    * Locates the specific word then grabs the string after
+    * Technical:
+    * Splits based regex of what it is then passes it to parser  
+    */
     wordsPreceding(text,what,res){
         let returnTxt
         let splitArray=[]
@@ -93,9 +121,8 @@ class ParsinFunctions{
                     Specific Word Parsing
     --------------------------------------------------------------------------
     */
+   //finds the preceding date and returns it back
    specificPrecedingParsing(text){
-        console.log("HERE")
-        console.log(text)
         if(text.length>1 ){
             let textFormat=text[0].trim()
             //will only work for MM-DD-YYYY
@@ -108,7 +135,14 @@ class ParsinFunctions{
         }
         return "";
     }
-
+    /**
+    * Use Case
+    * 1. Specific date preceding the specified word
+    * Description
+    * Locates the specificed word such as emal/phone/word then gets the date prior to it
+    * Technical:
+    * Splits based regex of what it is then passes it to parser to find the date  
+    */
     specificPreceding(text,what,res){
         let returnTxt
         let splitArray=[]
