@@ -1,19 +1,13 @@
 const DialogFlow=require("./DialogFlowService.js");
 const ParsingFunctions=require("./ParsingFunctions.js");
-
+const dialogFlowService = new DialogFlow();
+ const parsingFunctions = new ParsingFunctions();
 class Rule{
+    //
     start(req,res){
-            //rule to query Dialog Flow with
+            //take in variables from message body of request
             var query = req.body.rule;
-            //Parse this text
             var text = req.body.text;
-            //Pass the text to Dialog Flow
-            /**
-             * Send a query to the dialogflow agent, and return the query result.
-             * @param {string} projectId The project to be used
-             */
-            var dialogFlowService = new DialogFlow();
-            var parsingFunctions = new ParsingFunctions();
             dialogFlowService.sendTextMessageToDialogFlow(query)
                 .then(function(response){
                     let intent=response.intent.displayName.toLowerCase()
@@ -43,7 +37,6 @@ class Rule{
                                 return res.send({"ERROR":"NO INTENT MATCHED FOR A FUNCTION"});
                                 
                     }
-                    //return res.send({"forcast":returnTxt});
                 })    
     }
     

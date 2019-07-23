@@ -29,7 +29,6 @@ class ParsinFunctions{
     * the query asks for, can work for 
     */
     splice(text,upper,lower, res){
-        console.log("Spliceing with lower: "+lowerbound+ " and "+"upper "+upperbound)
         let upperbound=parseInt(upper)
         let lowerbound=(lower!=null && lower!="")? parseInt(lower) : upperbound-1;
         let returnTxt=text.split(/\s+/).slice(lowerbound,upperbound).join(' ')
@@ -43,8 +42,9 @@ class ParsinFunctions{
     */
    //Parses the array to get Specific amount of words after what it was looking for
     wordAndFollowingParsing(text,following){
+        console.log(text)
         if(text.length>1 ){
-            let textFormat=text[0].trim().split(" ").slice(0,following).join(' ')
+            let textFormat=text[text.length-1].trim().split(" ").slice(0,following).join(' ')
             return textFormat
         }
         return "";

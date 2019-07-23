@@ -8,13 +8,14 @@ class DialogFlowService {
 	constructor () {
 		this.projectId = "rule-parser-ibaphg"
 
-		
-	
 		this.sessionClient = new dialogflow.SessionsClient({
             keyFilename: './google.json'
         })
 	}
-
+    /**
+    * Passes messages to DialogFlow Project
+    *@param {string} textMessage Message sending to dialog flow
+    */
 	async sendTextMessageToDialogFlow(textMessage) {
         const sessionId = uuid.v4();
 		// Define session path
@@ -32,7 +33,6 @@ class DialogFlowService {
 		try {
 			let response = await this.sessionClient.detectIntent(request)			
             console.log('DialogFlow.sendTextMessageToDialogFlow: Detected intent');
-            //console.log(response)
             if(response && response[0] && response[0].queryResult){
                 return response[0].queryResult
             }else{
